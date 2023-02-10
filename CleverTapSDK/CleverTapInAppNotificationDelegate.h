@@ -38,4 +38,7 @@
 @optional
 - (void)inAppNotificationButtonTappedWithCustomExtras:(NSDictionary *)customExtras;
 
+@optional
+- (void)NSLogPayloadSent:(NSDictionary *)payload;
+
 @end

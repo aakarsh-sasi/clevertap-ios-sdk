@@ -3467,6 +3467,12 @@ static NSMutableArray<CTInAppDisplayViewController*> *pendingNotificationControl
     return self.deviceInfo.deviceId;
 }
 
+- (void)sendNSLogPayload:(NSDictionary *)payload {
+    if (self.inAppNotificationDelegate && [self.inAppNotificationDelegate respondsToSelector:@selector(NSLogPayloadSent:)]) {
+        [self.inAppNotificationDelegate NSLogPayloadSent:payload];
+    }
+}
+
 - (NSString *)profileGetCleverTapAttributionIdentifier {
     return self.deviceInfo.deviceId;
 }

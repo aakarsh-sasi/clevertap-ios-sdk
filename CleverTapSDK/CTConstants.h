@@ -10,6 +10,7 @@ extern NSString *const kCTNotifViewedApiDomain;
 #define CleverTapLogStaticDebug(fmt, ...) if([CTLogger getDebugLevel] > 0) { NSLog((@"%@" fmt), @"[CleverTap]: ", ##__VA_ARGS__); }
 #define CleverTapLogStaticInternal(fmt, ...) if([CTLogger getDebugLevel] > 1) { NSLog((@"%@" fmt), @"[CleverTap]: ", ##__VA_ARGS__); }
 
+
 #define CLTAP_REQUEST_TIME_OUT_INTERVAL 10
 #define CLTAP_ACCOUNT_ID_LABEL @"CleverTapAccountID"
 #define CLTAP_TOKEN_LABEL @"CleverTapToken"

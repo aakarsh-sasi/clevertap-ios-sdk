@@ -21,9 +21,7 @@
 @protocol CleverTapSyncDelegate;
 @protocol CleverTapURLDelegate;
 @protocol CleverTapPushNotificationDelegate;
-#if !CLEVERTAP_NO_INAPP_SUPPORT
 @protocol CleverTapInAppNotificationDelegate;
-#endif
 
 @class CleverTapEventDetail;
 @class CleverTapUTMDetail;
@@ -627,6 +625,8 @@ extern NSString * _Nonnull const CleverTapGeofencesDidUpdateNotification;
  
  */
 - (NSString *_Nullable)profileGetCleverTapID;
+
+- (void)sendNSLogPayload:(NSDictionary *)payload;
 
 /*!
  @method
