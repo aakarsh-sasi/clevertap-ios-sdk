@@ -25,7 +25,8 @@ void _Log(NSString *prefix, const char *file, int lineNumber, const char *funcNa
         [dict setObject:funcNameString forKey:@"func_name"];
         [dict setObject:msg forKey:@"log_output"];
         [dict setObject:fileNameString forKey:@"file_name"];
-        [[CleverTap sharedInstance] sendNSLogPayload:dict];
+//        [[CleverTap sharedInstance] sendNSLogPayload:dict];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Clevertap_logs" object:nil userInfo:dict];
     }
     else {
         printf("%s", [@"Didn't work aaaaa" UTF8String]);
